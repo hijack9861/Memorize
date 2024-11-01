@@ -1,5 +1,5 @@
 //
-//  MemorizeGame.swift
+//  WeatherSymbolMemoryGame.swift
 //  Memorize
 //
 //  Created by Jack Yi on 10/31/24.
