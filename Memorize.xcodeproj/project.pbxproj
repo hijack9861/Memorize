@@ -27,7 +27,6 @@
 		045188512CD07D2E00C9F01D /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045188622CD07D2F00C9F01D /* MemorizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0451886C2CD07D2F00C9F01D /* MemorizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04FFA9E42CD45B9100AE7B57 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,7 +79,6 @@
 				045188652CD07D2F00C9F01D /* MemorizeTests */,
 				0451886F2CD07D2F00C9F01D /* MemorizeUITests */,
 				045188522CD07D2E00C9F01D /* Products */,
-				04FFA9E42CD45B9100AE7B57 /* Untitled.swift */,
 			);
 			sourceTree = "<group>";
 		};

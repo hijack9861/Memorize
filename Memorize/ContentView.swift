@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    var viewModel: WeatherSymbolMemoryGame
+    
     let weatherSymbols = [
         "sun.max",
         "cloud.rain",
