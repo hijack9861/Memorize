@@ -12,66 +12,37 @@ struct ContentView: View {
         "sun.max",
         "cloud.rain",
         "cloud.sun",
-        "tornado",
+        "snowflake",
+        "cloud.moon",
         "wind",
         "cloud.moon.bolt",
+        "flame",
         "cloud.heavyrain",
+        "hurricane",
         "cloud.snow",
         "cloud.fog",
-        "cloud.fog.bolt",
-        "cloud.fog.rain",
-        "cloud.fog.snow",
-        "cloud.fog.bolt.rain",
-        "cloud.fog.bolt.snow",
-        "cloud.fog.bolt.snow"
+        "cloud.hail",
+        "tornado",
+        "cloud.drizzle",
+        "moon.dust",
+        "tropicalstorm",
+        "cloud"
     ]
     
-    @State var cardCount: Int = 4
-    
     var body: some View {
-        VStack {
-            ScrollView {
-                cards
-            }
-            cardCountAdjusters
+        ScrollView {
+            cards
         }
         .padding()
     }
     
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
-            ForEach(0..<cardCount, id: \.self) { index in
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))]) {
+            ForEach(weatherSymbols.indices, id: \.self) { index in
                 CardView(content: weatherSymbols[index])
                     .aspectRatio(2/3, contentMode: .fit)
             }
         }
-    }
-    
-    var cardCountAdjusters: some View {
-        HStack {
-            cardRemover
-            Spacer()
-            cardAdder
-        }
-        .imageScale(.large)
-        .font(.largeTitle)
-    }
-    
-    func cardCountAdjuster(by offset: Int, symbol: String) -> some View {
-        Button(action: {
-            cardCount += offset
-        }, label: {
-            Image(systemName: symbol)
-        })
-        .disabled(cardCount + offset < 1 || cardCount + offset > weatherSymbols.count)
-    }
-    
-    var cardRemover: some View {
-        cardCountAdjuster(by: -1, symbol: "minus.circle.fill")
-    }
-    
-    var cardAdder: some View {
-        cardCountAdjuster(by: +1, symbol: "plus.circle.fill")
     }
 }
 
