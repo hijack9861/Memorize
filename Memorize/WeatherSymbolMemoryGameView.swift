@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WeatherSymbolMemoryGameView.swift
 //  Memorize
 //
 //  Created by Jack Yi on 10/26/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WeatherSymbolMemoryGameView: View {
     var viewModel: WeatherSymbolMemoryGame
     
     let weatherSymbols = [
@@ -73,5 +73,5 @@ struct CardView: View {
 
 
 #Preview {
-    ContentView()
+    WeatherSymbolMemoryGameView()
 }
