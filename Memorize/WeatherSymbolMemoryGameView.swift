@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherSymbolMemoryGameView: View {
-    var viewModel: WeatherSymbolMemoryGame
+    var viewModel: WeatherSymbolMemoryGame = WeatherSymbolMemoryGame()
     
     let weatherSymbols = [
         "sun.max",
@@ -40,8 +40,8 @@ struct WeatherSymbolMemoryGameView: View {
     
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))]) {
-            ForEach(weatherSymbols.indices, id: \.self) { index in
-                CardView(content: weatherSymbols[index])
+            ForEach(viewModel.cards.indices, id: \.self) { index in
+                CardView(card: viewModel.cards[index])
                     .aspectRatio(2/3, contentMode: .fit)
             }
         }
@@ -49,28 +49,22 @@ struct WeatherSymbolMemoryGameView: View {
 }
 
 struct CardView: View {
-    let content: String
-    @State var isFaceUp = true
+    let card: MemoryGame<String>.Card
     
     var body: some View {
         ZStack {
             let base = RoundedRectangle(cornerRadius: 12)
-    
             Group {
                 base.fill(Color(red: 0.35, green: 0.51, blue: 0.74))
-                Image(systemName: content)
+                Image(systemName: card.content)
                     .font(.largeTitle)
                     .foregroundColor(.white)
             }
-            .opacity(isFaceUp ? 1 : 0)
-            base.fill(Color(red: 0.91, green: 0.91, blue: 0.91)).opacity(isFaceUp ? 0 : 1)
-        }
-        .onTapGesture {
-            isFaceUp.toggle()
+            .opacity(card.isFaceUp ? 1 : 0)
+            base.fill(Color(red: 0.91, green: 0.91, blue: 0.91)).opacity(card.isFaceUp ? 0 : 1)
         }
     }
 }
-
 
 #Preview {
     WeatherSymbolMemoryGameView()
